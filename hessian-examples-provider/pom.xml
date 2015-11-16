@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>me.leizhnxp.examples</groupId>
-			<artifactId>hessian-examples-service-provider-api</artifactId>
+			<artifactId>hessian-examples-service-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
