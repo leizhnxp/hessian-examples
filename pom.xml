@@ -9,8 +9,8 @@
 
 	<modules>
 		<module>hessian-exmaples-api</module>
-		<module>hessian-exmaples-client</module>
-		<module>hessian-exmaples-webapp</module>
+		<module>hessian-exmaples-consumer</module>
+		<module>hessian-exmaples-provider</module>
 	</modules>
 
 	<properties>
