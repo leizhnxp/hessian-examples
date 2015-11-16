@@ -8,9 +8,9 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>hessian-exmaples-api</module>
-		<module>hessian-exmaples-service-consumer</module>
-		<module>hessian-exmaples-service-provider</module>
+		<module>hessian-examples-api</module>
+		<module>hessian-examples-service-consumer</module>
+		<module>hessian-examples-service-provider</module>
 	</modules>
 
 	<properties>
