@@ -36,7 +36,7 @@
 				<configuration>
 					<scanIntervalSeconds>6</scanIntervalSeconds>
 					<webAppConfig>
-						<contextPath>/provider</contextPath>
+						<contextPath>/service-provider</contextPath>
 					</webAppConfig>
 				</configuration>
 			</plugin>
