@@ -2,12 +2,17 @@
 
 ## 缘起
 
-* 现在可能还不适合说太多，就当是兴趣使然
+* 现在可能还不适合说太多，知道的知道，不知道的也没必要知道，就当是兴趣使然，也未尝不可
 
 ## 结论
 
-* 先说了
-* 跟spring结合起来还是很简单的
+* 先说结论有时候没坏处
+* 跟spring结合起来还是很简单的，有点太简单了
+* 
+
+## 概述
+
+* 描述一个和RPC相关的概念上完整的结构，需要一个示例接口定义，一个客户端，一个服务端，然后就是把这些粘合在一起的基础设施和框架需要做的适配
 
 ## 工程说明
 
@@ -22,14 +27,17 @@
 
 ### hessian-examples-service-consumer
 
-* spring mvc对外暴露接口，mvn clean jetty:run 跑起来在9090端口，curl http://localhost:9090/service-consumer/asdfasf，是的，最后一个参数目前每固定
+* spring mvc对外暴露接口
+* mvn clean jetty:run 
+* 跑起来在9090端口
+* curl http://localhost:9090/service-consumer/asdfasf，是的，最后一个参数目前没固定，总都是调用provider的那个示例接口
 
 ### hessian-examples-service-provider
 
 * spring mvc + hessian端点配置
 * mvn clean jetty:run
 * 跑起来在8080
-* curl http://localhost:8080/service-provider/AccountService，当然这个操作是多余的，这个地址配到了consumer里，这里访问了也没东西，不过看到是个POST，心里很不爽，我就是调用了一个典型的幂等操作啊，它非给我整一个POST，暗暗怀恨在心...或者也许有什么我不知道的秘密...
+* curl http://localhost:8080/service-provider/AccountService，当然这个操作是多余的，这个地址配到了consumer里，这里访问了也没东西，不过看到是个POST，心里很不爽，我就是调用了一个典型的幂等操作啊，它非给我整一个POST，暗暗怀恨在心...或者也许有什么我还不知道的秘密...
 
 ## 后续
 
