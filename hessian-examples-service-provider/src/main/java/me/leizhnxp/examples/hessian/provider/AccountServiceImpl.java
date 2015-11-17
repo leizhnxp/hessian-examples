@@ -9,12 +9,11 @@ import me.leizhnxp.examples.hessian.poc.AccountService;
 public class AccountServiceImpl implements AccountService {
 
     public void insertAccount(Account acc) {
-        // do something...
+        // TODO
     }
 
     public List<Account> getAccounts(String name) {
 		return Arrays.asList(new Account());
-        // do something...
     }
 
 }
