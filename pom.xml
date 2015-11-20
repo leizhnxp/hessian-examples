@@ -16,6 +16,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.2.0.RELEASE</spring.version>
+		<version.mybatis>3.2.8</version.mybatis>
+		<version.derby>10.11.1.1</version.derby>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -47,11 +49,6 @@
 				<version>1.16.6</version>
 			</dependency>
 			<dependency>
-				<groupId>org.mongodb</groupId>
-				<artifactId>bson</artifactId>
-				<version>${version.mongodb}</version>
-			</dependency>
-			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
 				<version>${spring.version}</version>
@@ -61,6 +58,18 @@
 				<artifactId>hessian</artifactId>
 				<version>4.0.38</version>
 			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${version.mybatis}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.derby</groupId>
+				<artifactId>derby</artifactId>
+				<version>${version.derby}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
