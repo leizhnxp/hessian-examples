@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>hessian-examples-api</module>
+		<module>hessian-examples-dao</module>
 		<module>hessian-examples-service-consumer</module>
 		<module>hessian-examples-service-provider</module>
 	</modules>
