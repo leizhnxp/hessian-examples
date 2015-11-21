@@ -19,6 +19,7 @@
 		<spring.version>4.2.0.RELEASE</spring.version>
 		<version.mybatis>3.2.8</version.mybatis>
 		<version.derby>10.11.1.1</version.derby>
+		<version.mysql.connector>5.1.29</version.mysql.connector>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -64,7 +65,11 @@
 				<artifactId>mybatis</artifactId>
 				<version>${version.mybatis}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${version.mysql.connector}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.apache.derby</groupId>
 				<artifactId>derby</artifactId>
