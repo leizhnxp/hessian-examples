@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>me.leizhnxp.examples</groupId>
-			<artifactId>hessian-examples-api</artifactId>
+			<artifactId>hessian-examples-dao</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
