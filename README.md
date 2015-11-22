@@ -15,15 +15,27 @@
 ## 概述
 
 * 描述一个和RPC相关的概念上完整的结构，需要一个示例接口定义，一个客户端，一个服务端，然后就是把这些粘合在一起的基础设施和框架需要做的适配，这是最主要的目的
-* 再前一个结构的基础上，增加引入mybatis后的样例，包括自动代码创建部分；这是次要的目的，但是项目应用时比较显示的需求
+* 在前一个结构的基础上，增加引入mybatis后的样例，包括自动代码创建部分；这是次要的目的，跟主题关系不大，但早晚会遇到
 * 额外的润滑剂部分，比如使用了Spring MVC，也就是认可了这种侵入性之后，索性彻底缴械披上它全部盔甲，比如message convertors功能
-* 上述“润滑剂”的简便性，却不好集中的表达，特别是和别的概念演示混合在一起的时候，主要是这种东西，连曾经极为醉心的那种奇技淫巧都不是，充其量也就是上上下下左右左右BA时的公开秘笈
+* 上述“润滑剂”的简便性，却不好集中的表达，特别是和别的概念演示混合在一起的时候；另外是这种东西，连曾经极为醉心的那种奇技淫巧都不是，充其量也就是上上下下左右左右BA时的公开通关捷径——只要基本技巧够娴熟，一条命小白豆豆也能过关
 
 ## 工程说明
 
 ### 最前
 
-* 因为增加了持久化那一部分，所以需要有个数据库，有个表
+* 因为增加了持久化那一部分，所以需要有个数据库，有个表；
+  ```sql
+  CREATE TABLE `account` (  
+  `account_id` bigint(20) unsigned NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `inserted` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `disabled` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT 0 - disabled 1 - enabled,
+  PRIMARY KEY (`account_id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+  ```
+
+* 又是仅为联通和工程脚手架，所以做概念说明并不完善
 
 ### hessian-examples-api
 
@@ -61,3 +73,4 @@
   * 和服务相关的名字，写在了spring的ctx文件中，properties化是必须的
     * 再进一步要仔细考量这个问题：从一个工匠角度来看，如果一个服务发现和名称管理的基础设施（dubble或者干脆就是更古老的WSDL）没有好用的可以启发式的或者搜索补全式的工具，这个基础设施的价值很是值得商榷，也许一个定义良好的URI，其实并不比那样一个基础设施能力在应用中表现的更差
 * 因为还是经过HTTP的（好吧，又做了万恶的把http当传输层协议的事情），所以概念上看，consumer和provider之间，有nginx做LB然后做水平扩展，应该没问题的，具体测一下保险
+* 持久层框架存在的目的，一个是从应用代码里的结构出发，然后生成DB的schema，这个感觉现实中没人这么干，那主要就是要做从数据库的schema自动生成大多数套路代码，但为了演示后者，必须要有数据库，准备后面用一个derby或h2在generate-sources之前，比如validate这个阶段生成数据库，这当然并非必须，但是为了整个概念原型的完整和自动化，又像是必要的，否则观察这个工程的人，除了clone、mvn还有curl，还得额外做点什么
