@@ -45,8 +45,7 @@ public class AccountServiceImpl implements AccountService {
     private List<Account> of(List<AccountModel> models) {
     	List<Account> result = new ArrayList<>();
     	for(AccountModel am:models){
-    		Account a = new Account();
-    		a.setName(am.getName());
+    		Account a = new Account(am.getName());
     		result.add(a);
     	}
 		return result;

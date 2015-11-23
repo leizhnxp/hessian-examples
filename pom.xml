@@ -21,7 +21,7 @@
 		<version.mybatis.spring>1.2.3</version.mybatis.spring>
 		<version.derby>10.11.1.1</version.derby>
 		<version.mysql.connector>5.1.29</version.mysql.connector>
-		<version.dbcp>1.2.2</version.dbcp>
+		<version.dbcp>1.4</version.dbcp>
 		<version.jackson>2.6.3</version.jackson>
 	</properties>
 	<dependencyManagement>
