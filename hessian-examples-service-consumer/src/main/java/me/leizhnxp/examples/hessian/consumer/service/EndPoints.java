@@ -21,11 +21,13 @@ public class EndPoints {
 	
 	@RequestMapping(path = "/accounts", method = RequestMethod.GET)
 	@ResponseBody
-	List<Account> accounts(@RequestParam("name") String name){
-		log.info("name : {}",name);
+	Result<List<Account>> accounts(@RequestParam("name") String name){
+		log.info("param name : {}",name);
 		final List<Account> accounts = accountService.getAccounts(name);
-		log.info("result size: {}",accounts.size());
-		return accounts;
+		Result<List<Account>> result = new Result<>();
+		result.setCode(0);
+		result.setDesc(accounts);
+		return result;
 	}
 
 	@Resource
