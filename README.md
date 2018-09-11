@@ -63,7 +63,7 @@
 * spring mvc + hessian端点配置
 * mvn clean jetty:run
 * 跑起来在8080
-* curl http://localhost:8080/service-provider/AccountService，当然这个操作是多余的，这个地址配到了consumer里，这里访问了也没东西，不过看到是个POST，心里很不爽，我就是调用了一个典型的幂等操作啊，它非给我整一个POST，暗暗怀恨在心...或者也许有什么我还不知道的秘密...
+* curl http://localhost:8080/service-provider/AccountService ，当然这个操作是多余的，这个地址配到了consumer里，这里访问了也没东西，不过看到是个POST，心里很不爽，我就是调用了一个典型的幂等操作啊，它非给我整一个POST，暗暗怀恨在心...或者也许有什么我还不知道的秘密...
 
 ## 后续
 
